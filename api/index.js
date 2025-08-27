@@ -1,14 +1,13 @@
-import express from 'express'
+import express from 'express';
 import publicRoutes from '../routes/public.js'
 import cors from 'cors'
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-// Rotas
-app.use('/api', publicRoutes)
+// A rota base agora é /
+app.use('/', publicRoutes);
 
-// Exporta o app para o Vercel
-export default app
+export default app;
