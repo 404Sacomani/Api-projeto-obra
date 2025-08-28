@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// A rota base agora é /
+// A rota base agora é /api
 app.use('/api', publicRoutes);
 
 export default app;
