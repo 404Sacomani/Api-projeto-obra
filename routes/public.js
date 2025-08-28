@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 router.get('/', async (req, res) => {
 
     try {
-        const artigoHome = {
+        const artigoHome = [{ 
     _id: '63fbaea1b4f3b8a9c8d7e6f5', // O MongoDB sempre adiciona um _id único
     titulo: 'Teste 01',
     subtitulo: 'conteudo para teste',
