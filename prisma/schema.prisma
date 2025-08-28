@@ -6,7 +6,7 @@
 
 datasource db {
   provider = "mongodb"
-  url      = env("mongodb+srv://404Sacomani:kfkCHkPCU5pZ5Zlh@404sacomanidb.3dqah5z.mongodb.net/404Sacomani?retryWrites=true&w=majority&appName=404SacomaniDB")
+  url      = env("")
 }
 
 generator client {
