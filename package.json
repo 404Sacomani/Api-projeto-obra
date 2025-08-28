@@ -1,22 +1,20 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Minha API para blog",
+  "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node api/index.js",
+    "build": "npx prisma generate"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "@prisma/client": "^6.14.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "prisma": "^6.14.0"
   },
   "devDependencies": {
-    "prisma": "^6.14.0"
+    "dotenv": "^16.4.5"
   }
 }
