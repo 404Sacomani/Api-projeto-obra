@@ -8,20 +8,11 @@ const prisma = new PrismaClient()
 router.get('/', async (req, res) => {
 
     try {
-        const artigoHome = await prisma.artigo.findMany({
-            select: {
-                titulo: true,
-                slugs: true,
-                dataPublic: true,
-                tags: true,
-                imagemCapa: true,
-                subtitulo: true
-            },
-            orderBy: {
-                dataPublic: 'desc'
-            },
-            take: 5
-        });
+        const artigoHome = artigo {
+titulo:nome,
+subtitulo:ola,
+slugs:idolobs,
+}
 
         res.status(200).json(artigoHome);
 
