@@ -9,17 +9,21 @@ router.get('/', async (req, res) => {
 
     try {
         const artigoHome = {
-Artigos: {
-titulo: 'Teste 01',
-subtitulo: 'conteudo para teste',
-slugs: 'teste-01'
-},
-{
-titulo: 'Teste 02',
-subtitulo: 'conteudo para teste',
-slugs: 'teste-02'
-}
-}
+  // A chave "Artigos" deve conter um ARRAY de objetos
+  Artigos: [
+    {
+      titulo: 'Teste 01',
+      subtitulo: 'conteudo para teste',
+      slug: 'teste-01' // Sugestão: usar "slug" no singular para um único artigo
+    },
+    {
+      titulo: 'Teste 02',
+      subtitulo: 'conteudo para teste',
+      slug: 'teste-02'
+    }
+    // Você pode adicionar mais objetos de artigo aqui, separados por vírgula
+  ]
+};
 
         res.status(200).json(artigoHome);
 
