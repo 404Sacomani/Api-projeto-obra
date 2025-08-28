@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 router.get('/', async (req, res) => {
 
     try {
-        const artigoHome = artigo {
+        const artigoHome = {
 titulo:'nome',
 subtitulo:'ola',
 slugs:'idolobs',
