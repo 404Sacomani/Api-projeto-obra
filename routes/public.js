@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         const artigoHome = {
 titulo:'nome',
 subtitulo:'ola',
-slugs:'idolobs',
+slugs:'idolobs'
 }
 
         res.status(200).json(artigoHome);
