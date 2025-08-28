@@ -6,7 +6,7 @@
 
 datasource db {
   provider = "mongodb"
-  url      = env("")
+  url      = env.REACT_APP_MONGO_LINK
 }
 
 generator client {
