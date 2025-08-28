@@ -1,7 +1,9 @@
 {
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "functions": {
     "api/**/*.js": {
-      "includeFiles": "node_modules/.prisma/client/**"
+      "includeFiles": "node_modules/@prisma/client/**"
     }
   },
   "builds": [
