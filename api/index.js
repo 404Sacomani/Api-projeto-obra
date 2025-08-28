@@ -8,6 +8,6 @@ app.use(express.json());
 app.use(cors());
 
 // A rota base agora é /
-app.use('/', publicRoutes);
+app.use('/api', publicRoutes);
 
 export default app;
