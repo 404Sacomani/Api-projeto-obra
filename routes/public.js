@@ -8,22 +8,20 @@ const prisma = new PrismaClient()
 router.get('/', async (req, res) => {
 
     try {
-        const artigoHome = {
-  // A chave "Artigos" deve conter um ARRAY de objetos
-  Artigos: [
-    {
-      titulo: 'Teste 01',
-      subtitulo: 'conteudo para teste',
-      slug: 'teste-01' // Sugestão: usar "slug" no singular para um único artigo
-    },
-    {
-      titulo: 'Teste 02',
-      subtitulo: 'conteudo para teste',
-      slug: 'teste-02'
-    }
-    // Você pode adicionar mais objetos de artigo aqui, separados por vírgula
-  ]
-};
+        const artigoHome = await prisma.artigo.findMany({
+            select: {
+                titulo: true,
+                slugs: true,
+                dataPublic: true,
+                tags: true,
+                imagemCapa: true,
+                subtitulo: true
+            },
+            orderBy: {
+                dataPublic: 'desc'
+            },
+            take: 5
+        });
 
         res.status(200).json(artigoHome);
 
