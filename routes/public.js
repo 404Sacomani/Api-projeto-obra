@@ -24,12 +24,6 @@ router.get('/', async (req, res) => {
   }
 ];
 
-// No seu front-end, você usaria o método .map() para renderizar essa lista
-artigos.map(artigo => {
-  console.log(artigo.titulo);
-});
-
-
         res.status(200).json(artigoHome);
 
     } catch (error) {
