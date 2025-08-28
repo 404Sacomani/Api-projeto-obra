@@ -9,9 +9,16 @@ router.get('/', async (req, res) => {
 
     try {
         const artigoHome = {
-titulo:'nome',
-subtitulo:'ola',
-slugs:'idolobs'
+Artigos: {
+titulo: 'Teste 01',
+subtitulo: 'conteudo para teste',
+slugs: 'teste-01'
+},
+{
+titulo: 'Teste 02',
+subtitulo: 'conteudo para teste',
+slugs: 'teste-02'
+}
 }
 
         res.status(200).json(artigoHome);
