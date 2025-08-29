@@ -3,7 +3,7 @@ import publicRoutes from './routes/public.js'
 import cors from 'cors'
 
 const app = express();
-const port = 8080
+const port = 3000
 
 app.use(express.json())
 app.use(cors())

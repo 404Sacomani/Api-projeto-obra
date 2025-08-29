@@ -6,7 +6,7 @@
 
 datasource db {
   provider = "mongodb"
-  url      = env("mongodb+srv://404Sacomani:kfkCHkPCU5pZ5Zlh@404sacomanidb.3dqah5z.mongodb.net/404Sacomani?retryWrites=true&w=majority&appName=404SacomaniDB")
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -14,18 +14,18 @@ generator client {
 }
 
 model Artigo {
-  id          String       @id @default(auto()) @map("_id") @db.ObjectId
-  titulo      String
-  subtitulo   String
-  conteudo    String
-  dataPublic  DateTime     @default(now())
-  tags        String[]
-  slugs       String       @unique
-  status      String
-  autor       Autor?       @relation(fields: [autorId], references: [id])
-  autorId     String       @db.ObjectId
-  imagemCapa  ImagemCapa?
-  comentarios Comentario[]
+  id           String       @id @default(auto()) @map("_id") @db.ObjectId
+  titulo       String
+  subtitulo    String
+  conteudo     String
+  dataPublic   DateTime     @default(now())
+  tags         String[]
+  slugs        String       @unique
+  status       String
+  autor        Autor?       @relation(fields: [autorId], references: [id])
+  autorId      String       @db.ObjectId
+  imagemCapa   ImagemCapa?
+  comentarios  Comentario[]
 }
 
 model Autor {
@@ -35,12 +35,12 @@ model Autor {
 }
 
 model Comentario {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  autor    String
-  conteudo String
-  data     DateTime @default(now())
-  artigo   Artigo   @relation(fields: [artigoId], references: [id])
-  artigoId String   @db.ObjectId
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  autor      String
+  conteudo   String
+  data       DateTime @default(now())
+  artigo     Artigo   @relation(fields: [artigoId], references: [id])
+  artigoId   String   @db.ObjectId
 }
 
 type ImagemCapa {
