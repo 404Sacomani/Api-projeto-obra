@@ -5,7 +5,7 @@ const router = express.Router()
 const prisma = new PrismaClient()
 
 //Rota de home
-router.get('/', async (req, res) => {
+router.get('/homeArtigo', async (req, res) => {
 
     try {
         const artigoHome = await prisma.artigo.findMany({

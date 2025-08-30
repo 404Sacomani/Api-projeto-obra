@@ -24,7 +24,8 @@ model Artigo {
   status       String
   autor        Autor?       @relation(fields: [autorId], references: [id])
   autorId      String       @db.ObjectId
-  imagemCapa   ImagemCapa?
+  imagemCapa   String
+  altCapa      String
   comentarios  Comentario[]
 }
 
@@ -41,9 +42,4 @@ model Comentario {
   data       DateTime @default(now())
   artigo     Artigo   @relation(fields: [artigoId], references: [id])
   artigoId   String   @db.ObjectId
-}
-
-type ImagemCapa {
-  url String
-  alt String
 }
