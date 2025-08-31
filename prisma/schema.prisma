@@ -16,6 +16,7 @@ model Artigo {
   id           String       @id @default(auto()) @map("_id") @db.ObjectId
   titulo       String
   subtitulo    String
+  resumo       String
   conteudo     String
   dataPublic   DateTime     @default(now())
   tags         String[]
@@ -41,4 +42,13 @@ model Comentario {
   data       DateTime @default(now())
   artigo     Artigo   @relation(fields: [artigoId], references: [id])
   artigoId   String   @db.ObjectId
+}
+
+model User {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userName   String   @unique
+  email      String   @unique
+  name       String
+  password   String
+  
 }
