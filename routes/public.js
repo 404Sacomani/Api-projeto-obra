@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 
 const JWT_SECRET = process.env.JWT_SECRET
 //Rota de home
-router.get('/homeArtigo', async (req, res) => {
+router.get('/homeBlog', async (req, res) => {
 
     try {
         const artigoHome = await prisma.artigo.findMany({
@@ -34,7 +34,7 @@ router.get('/homeArtigo', async (req, res) => {
     }
 })
 
-router.get('/artigos', async (req, res) => {
+router.get('/blog', async (req, res) => {
     const { _start, _limit } = req.query;
 
     try {
@@ -57,7 +57,7 @@ router.get('/artigos', async (req, res) => {
 });
 
 // Rota para um único artigo por slug
-router.get('/artigos/:slug', async (req, res) => {
+router.get('/blog/:slug', async (req, res) => {
     const { slug } = req.params;
 
     try {
